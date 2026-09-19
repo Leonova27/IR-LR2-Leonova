@@ -1,9 +1,10 @@
 name: Flask CI/CD
+
 on:
  push:
-  branches: [ development, main ]
+   branches: [ development, main ]
  pull_request:
-branches: [ development, main ]
+   branches: [ development, main ]
 jobs:
  test:
   runs-on: ubuntu-latest
@@ -13,11 +14,11 @@ jobs:
   - name: Set up Python
     uses: actions/setup-python@v4
     with:
-     python-version: '3.9'
-     - name: Install dependencies
-       run: |
-         python -m pip install --upgrade pip
-         pip install -r requirements.txt
-     - name: Run basic test
-       run: |
-         python -c "import app; print('App imported successfully')"
+      python-version: '3.9'
+  - name: Install dependencies
+    run: |
+      python -m pip install --upgrade pip
+      pip install -r requirements.txt
+  - name: Run basic test
+    run: |
+      python -c "import app; print('App imported successfully')"
